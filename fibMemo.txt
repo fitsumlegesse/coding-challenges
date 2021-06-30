@@ -1,0 +1,26 @@
+import java.util.HashMap;
+
+public class fibMemo10 {
+
+	public static int fS(int n) 
+	{
+		if(n <= 1) {return n;}
+		HashMap <Integer, Integer> map = new HashMap<>();
+		if(map.containsKey(n))
+		{
+			return map.get(n);
+		}else{
+			
+			int com = fS(n-1) + fS(n-2);
+			map.put(n, com);
+			return com;
+		}
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(fS(5));
+
+	}
+
+}
